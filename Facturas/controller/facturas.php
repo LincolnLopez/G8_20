@@ -12,7 +12,7 @@
         header('Content-Type: application/json');
 
         require_once("../../config/conexion.php");
-        require_once("../../Facturas/models/Facturas.php");
+        require_once("../../Facturas/models/Facturas.php"); //Nueva ruta
         $facturas=new Facturas();
         
         $body = json_decode(file_get_contents("php://input"), true);
