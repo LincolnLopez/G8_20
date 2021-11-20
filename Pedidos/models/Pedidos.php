@@ -3,7 +3,7 @@ class Pedidos extends conectar{
 
     public function Get_Pedidos(){
         $conectar= parent :: conexion();
-        parent::set_name();
+        parent:: set_names();
         $sql = "SELECT * FROM ma_pedidos WHERE estado = 1";
         $sql = $conectar-> prepare($sql);
         $sql->execute();
@@ -11,7 +11,7 @@ class Pedidos extends conectar{
     }
     public function Get_Pedido($ID){
         $conectar= parent::conexion();
-        parent::set_name();
+        parent:: set_names();
         $sql = "SELECT * FROM ma_pedidos WHERE estado = 1 AND ID = ?";
         $sql = $conectar-> prepare($sql);
         $sql ->bindValue(1,$ID);
@@ -20,7 +20,7 @@ class Pedidos extends conectar{
 }
     public function Insert_Pedido($ID_SOCIO, $FECHA_PEDIDO, $DETALLE, $SUB_TOTAL,$TOTAL_ISV,$TOTAL, $FECHA_ENTREGA){
         $conectar= parent :: conexion();
-        parent:: set_name();
+        parent:: set_names();
         $sql="INSERT INTO ma_pedidos(ID, ID_SOCIO, FECHA_PEDIDO,DETALLE,SUB_TOTAL,TOTAL_ISV,TOTAL,FECHA_ENTREGA, ESTADO) 
         VALUES(NULL,?,?,?,?,?,?,?,'1');";
         $sql = $conectar-> prepare($sql);
@@ -36,7 +36,7 @@ class Pedidos extends conectar{
 }
 public function Update_Pedido($ID,$ID_SOCIO, $FECHA_PEDIDO, $DETALLE, $SUB_TOTAL,$TOTAL_ISV, $TOTAL, $FECHA_ENTREGA, $ESTADO){
         $conectar= parent :: conexion();
-        parent:: set_name();
+        parent:: set_names();
         $sql= " UPDATE ma_pedidos SET ID_SOCIO = ?, FECHA_PEDIDO = ?, DETALLE = ?, SUB_TOTAL = ?, TOTAL_ISV = ?, TOTAL = ?, FECHA_ENTREGA = ?, ESTADO=?
         WHERE ID = ?;";
         $sql = $conectar-> prepare($sql);
@@ -54,12 +54,12 @@ public function Update_Pedido($ID,$ID_SOCIO, $FECHA_PEDIDO, $DETALLE, $SUB_TOTAL
 }
 public function Delete_Pedido($ID){
         $conectar= parent::conexion();
-        parent::set_name();
+        parent:: set_name();
         $sql = "DELETE  FROM ma_pedidos WHERE ID = ?";
         $sql = $conectar-> prepare($sql);
         $sql ->bindValue(1,$ID);
         $sql ->execute();
         return $resultado= $sql -> fetchALL (PDO::FETCH_ASSOC);
-}
-}
+        }
+    }
 ?>
