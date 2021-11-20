@@ -12,7 +12,7 @@
         header('Content-Type: application/json');
 
         require_once("../../config/conexion.php");
-        require_once("../../Pedidos/models/Pedidos.php");
+        require_once("../../Pedidos/models/Pedidos.php"); //Nueva Ruta
         $pedidos = new Pedidos();
 
         $body = json_decode(file_get_contents("php://input"),true);
