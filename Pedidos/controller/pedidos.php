@@ -8,16 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Content-Type: text/plain');
     die();
   }
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
 
-require_once("../config/conexion.php");
-require_once("../models/Pedidos.php");
-$pedidos = new Pedidos();
+        require_once("../../config/conexion.php");
+        require_once("../../Pedidos/models/Pedidos.php");
+        $pedidos = new Pedidos();
 
-$body = json_decode(file_get_contents("php://input"),true);
+        $body = json_decode(file_get_contents("php://input"),true);
 
-switch($_GET["op"]){
+        switch($_GET["op"]){
 
         case "GetPedidos":
             $datos=$pedidos->get_pedidos();
