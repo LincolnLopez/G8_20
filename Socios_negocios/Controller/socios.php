@@ -12,8 +12,8 @@
         header('Access-Control-Allow-Origin: *');
         header('Content-type: application/json');
 
-        require_once("C:/xampp/htdocs/G8_20/config/conexion.php");
-        require_once("../Models/Socios.php");
+        require_once("../../config/conexion.php");
+        require_once("../../Socios_negocios/Models/Socios.php");
         $socios = new Socios();
        
    
