@@ -12,7 +12,7 @@
         header('Access-Control-Allow-Origin: *');
         header('Content-type: application/json');
 
-        require_once("../Confing/conexion.php");
+        require_once("C:/xampp/htdocs/G8_20/config/conexion.php");
         require_once("../Models/Socios.php");
         $socios = new Socios();
        
