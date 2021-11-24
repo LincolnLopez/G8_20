@@ -54,7 +54,7 @@ public function Update_Pedido($ID,$ID_SOCIO, $FECHA_PEDIDO, $DETALLE, $SUB_TOTAL
 }
 public function Delete_Pedido($ID){
         $conectar= parent::conexion();
-        parent:: set_name();
+        parent:: set_names();
         $sql = "DELETE  FROM ma_pedidos WHERE ID = ?";
         $sql = $conectar-> prepare($sql);
         $sql ->bindValue(1,$ID);

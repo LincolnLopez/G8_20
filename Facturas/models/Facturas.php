@@ -61,7 +61,7 @@ class Facturas extends Conectar{
         $conectar=parent::conexion();
         parent::set_names();
         $sql="DELETE FROM ma_facturas WHERE ID=?";
-        $sql=$conectar->prepare($sql);
+        $sql=$conectar-> prepare($sql);
         $sql->bindValue(1, $ID);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
